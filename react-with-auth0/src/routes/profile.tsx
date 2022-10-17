@@ -1,4 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
+import Logout from "../components/logout";
 
 export default function Profile() {
   const { user, isLoading } = useAuth0();
@@ -29,6 +30,7 @@ export default function Profile() {
       >
         {user?.email_verified ? "Verified" : "Not Verified"}
       </div>
+      <Logout />
     </div>
   );
 }
