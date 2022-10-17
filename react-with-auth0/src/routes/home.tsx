@@ -1,6 +1,9 @@
+import { useAuth0 } from "@auth0/auth0-react";
 import LoginWithRedirect from "../components/login-with-redirect";
+import ProfileLink from "../components/profile-link";
 
 export default function Home() {
+  const { isAuthenticated } = useAuth0();
   return (
     <div className="max-w-4xl w-full mx-auto flex flex-col items-center py-12 sm:py-24">
       <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5 sm:mb-10">
@@ -10,7 +13,7 @@ export default function Home() {
         </h1>
       </div>
       <div className="flex justify-center items-center">
-        <LoginWithRedirect />
+        {isAuthenticated ? <ProfileLink /> : <LoginWithRedirect />}
       </div>
     </div>
   );
