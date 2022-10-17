@@ -1,7 +1,6 @@
-import { useAuth0 } from "@auth0/auth0-react";
+import LoginWithRedirect from "../components/login-with-redirect";
 
 export default function Home() {
-  const { loginWithRedirect } = useAuth0();
   return (
     <div className="max-w-4xl w-full mx-auto flex flex-col items-center py-12 sm:py-24">
       <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5 sm:mb-10">
@@ -11,12 +10,7 @@ export default function Home() {
         </h1>
       </div>
       <div className="flex justify-center items-center">
-        <button
-          onClick={() => loginWithRedirect()}
-          className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 bg-blue-500 transition duration-150 ease-in-out hover:bg-blue-600 lg:text-xl lg:font-bold   text-white px-4 sm:px-10 border border-blue-700 py-2 sm:py-4 text-sm rounded-full"
-        >
-          Authenticate
-        </button>
+        <LoginWithRedirect />
       </div>
     </div>
   );
