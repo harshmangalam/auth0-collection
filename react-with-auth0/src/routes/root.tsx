@@ -10,7 +10,7 @@ export default function Root() {
   return (
     <div className="min-h-screen bg-gray-100">
       <Navbar />
-      <main>
+      <main className="py-4 px-4">
         <Outlet />
       </main>
     </div>
